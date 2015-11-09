@@ -17,6 +17,7 @@ $app->get('/', function () use ($app) {
 });
 
 $app-> post('charge',['middleware' => 'cors', function(Request $request){
+  dd($request);
   \Stripe\Stripe::setApiKey(env('STRIPE_KEY'));
 \Stripe\Charge::create(array(
   "amount" => $request->input('amount'),

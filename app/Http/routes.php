@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 */
 
 $app->get('/', function () use ($app) {
-    return $app->welcome();
+    return 'Parker POS';
 });
 
 $app-> post('charge',['middleware' => 'cors', function(Request $request){

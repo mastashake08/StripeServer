@@ -22,13 +22,8 @@ $app-> post('charge',['middleware' => 'cors', function(Request $request){
 \Stripe\Charge::create(array(
   "amount" => $request->input('amount'),
   "currency" => "usd",
-  "source" => [
-    'exp_month' => $request->input('exp_month'),
-    'exp_year' => $request->input('exp_year'),
-    'number' => $request->input('card_number'),
-    'object' => 'card',
-    'cvc' => $request->input('cvc')
-    ], // obtained with Stripe.js
+  "source" => $request->token,
   "description" => $request->input('description')
 ));
+return response()->json(['success'=>'true']);
 }]);

@@ -18,12 +18,12 @@ $app->get('/', function () use ($app) {
 });
 
 $app->post('success', function (Request $request) {
-    dd($request);
-    Mail::raw('You got paid',
+    return $request->all();
+    /*Mail::raw('You got paid',
     function($msg) {
       $msg->to(['8594024863@messaging.sprintpcs.com']);
        $msg->from(['payment@jyroneparker.com']);
-     });
+     });*/
 });
 
 $app-> post('charge',['middleware' => 'cors', function(Request $request){

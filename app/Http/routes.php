@@ -17,8 +17,8 @@ $app->get('/', function () use ($app) {
     return view('index');
 });
 
-$app->post('success', function () use ($app) {
-    Mail::raw('You got paid',
+$app->post('success', function (Request $request) {
+    Mail::raw($request->all(),
     function($msg) {
       $msg->to(['8594024863@messaging.sprintpcs.com']);
        $msg->from(['payment@jyroneparker.com']);

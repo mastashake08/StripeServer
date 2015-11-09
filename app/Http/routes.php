@@ -16,7 +16,7 @@ $app->get('/', function () use ($app) {
     return $app->welcome();
 });
 
-$app-> post('charge', function(Request $request){
+$app-> post('charge',['middleware' => 'cors', function(Request $request){
   \Stripe\Stripe::setApiKey(env('STRIPE_KEY'));
 \Stripe\Charge::create(array(
   "amount" => $request->amount,
@@ -30,4 +30,4 @@ $app-> post('charge', function(Request $request){
     ], // obtained with Stripe.js
   "description" => $request->description
 ));
-});
+}]);

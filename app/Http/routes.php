@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -13,4 +14,20 @@
 
 $app->get('/', function () use ($app) {
     return $app->welcome();
+});
+
+$app-> post('charge', function(Request $request){
+  \Stripe\Stripe::setApiKey(env('STRIPE_KEY'));
+\Stripe\Charge::create(array(
+  "amount" => $request->amount,
+  "currency" => "usd",
+  "source" => [
+    'exp_month' => $request->exp_month,
+    'exp_year' => $request->exp_year,
+    'number' => $request->card_number,
+    'object' => 'card',
+    'cvc' => $request->cvc
+    ], // obtained with Stripe.js
+  "description" => $request->description
+));
 });

@@ -19,15 +19,15 @@ $app->get('/', function () use ($app) {
 $app-> post('charge',['middleware' => 'cors', function(Request $request){
   \Stripe\Stripe::setApiKey(env('STRIPE_KEY'));
 \Stripe\Charge::create(array(
-  "amount" => $request->amount,
+  "amount" => $request->input('amount'),
   "currency" => "usd",
   "source" => [
-    'exp_month' => $request->exp_month,
-    'exp_year' => $request->exp_year,
-    'number' => $request->card_number,
+    'exp_month' => $request->input('exp_month'),
+    'exp_year' => $request->input('exp_year'),
+    'number' => $request->input('card_number'),
     'object' => 'card',
-    'cvc' => $request->cvc
+    'cvc' => $request->input('cvc')
     ], // obtained with Stripe.js
-  "description" => $request->description
+  "description" => $request->input('description')
 ));
 }]);

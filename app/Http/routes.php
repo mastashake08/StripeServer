@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,6 +15,10 @@ use Illuminate\Http\Request;
 
 $app->get('/', function () use ($app) {
     return view('index');
+});
+
+$app->get('success', function () use ($app) {
+    Mail::raw('You got paid', function($msg) { $msg->to(['8594024863@messaging.sprintpcs.com']); $msg->from(['payment@jyroneparker.com']); });
 });
 
 $app-> post('charge',['middleware' => 'cors', function(Request $request){

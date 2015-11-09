@@ -21,7 +21,7 @@ $app->post('stripe', function (Request $request) {
   switch($request->type){
     case 'charge.succeeded':
      $number = $request->data['object']['amount'] / 100;
-    Mail::raw('You got paid $'. money_format('%i', $number) . "\n",
+    Mail::raw('Charge succeeded in amount of $'. money_format('%i', $number) . "\n",
     function($msg) {
       $msg->to(['8594024863@messaging.sprintpcs.com']);
        $msg->from(['payment@jyroneparker.com']);

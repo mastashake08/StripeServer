@@ -15,15 +15,15 @@ public function handleStripe(Request $request){
     Mail::raw('Charge succeeded in amount of $'. money_format('%i', $number) . "\n",
     function($msg) {
       $msg->to([env('PHONE_ADDRESS')]);
-       $msg->from(['payment@jyroneparker.com']);
+       $msg->from([[env('MAIL_FROM_ADDRESS')]);
      });
      break;
      case 'charge.failed':
      $number = $request->data['object']['amount'] / 100;
     Mail::raw('Charge failed in amount of $'. money_format('%i', $number) . "\n",
     function($msg) {
-      $msg->to(['8594024863@messaging.sprintpcs.com']);
-       $msg->from(['payment@jyroneparker.com']);
+      $msg->to([[env('PHONE_ADDRESS')]);
+       $msg->from([[env('MAIL_FROM_ADDRESS')]);
      });
      break;
    }

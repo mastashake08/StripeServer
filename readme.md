@@ -15,5 +15,5 @@ It would be in your best interest to run this code on an HTTPS server to further
 
 ##Webhooks
 
-Create webhooks on your Stripe account and point it to your http://<server-ip>/stripe
+Create webhooks on your Stripe account and point it to your http://your-server-ip/stripe
 If you wish to edit which events to listen for simply add that event to the switch statement in the WebHookController.

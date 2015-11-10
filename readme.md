@@ -9,8 +9,11 @@ for a programming blog on http://www.jyroneparker.com. It is also meant to be us
 To install this microservice clone this repository on your server and install the composer dependencies:
 composer install
 
-Next you need to rename .env.example to .env and fill in STRIPE_KEY and MAIL_* keys.
+Next you need to rename .env.example to .env and fill in STRIPE_KEY, PHONE_ADDRESS and MAIL_* keys.
 
 It would be in your best interest to run this code on an HTTPS server to further protect your client's information.
 
 ##Webhooks
+
+Create webhooks on your Stripe account and point it to your http://<server-ip>/stripe
+If you wish to edit which events to listen for simply add that event to the switch statement in the WebHookController.

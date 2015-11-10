@@ -19,14 +19,4 @@ $app->get('/', function () use ($app) {
 
 $app->post('stripe', 'WebHookController@handleStripe');
 
-$app-> post('charge',['middleware' => 'cors', function(Request $request){
-  //dd($request);
-  \Stripe\Stripe::setApiKey(env('STRIPE_KEY'));
-\Stripe\Charge::create(array(
-  "amount" => $request->input('amount'),
-  "currency" => "usd",
-  "source" => $request->token,
-  "description" => $request->input('description')
-));
-return response()->json(['success'=>'true']);
-}]);
+$app-> post('charge',['middleware' => 'cors', 'uses' => 'ChargeController@charge']);

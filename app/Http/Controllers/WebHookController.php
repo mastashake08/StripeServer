@@ -14,7 +14,7 @@ public function handleStripe(Request $request){
      $number = $request->data['object']['amount'] / 100;
     Mail::raw('Charge succeeded in amount of $'. money_format('%i', $number) . "\n",
     function($msg) {
-      $msg->to(['8594024863@messaging.sprintpcs.com']);
+      $msg->to([env('PHONE_ADDRESS')]);
        $msg->from(['payment@jyroneparker.com']);
      });
      break;

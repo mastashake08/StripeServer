@@ -6,8 +6,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Point of Sales solution built using Laravel and Stripe. To learn how to create this and more visit http://www.jyroneparker.com">
+    <meta name="author" content="Jyrone Parker">
+    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@mastashake08">
+<meta name="twitter:creator" content="@mastashake08">
+<meta name="twitter:title" content="Parker POS">
+<meta name="twitter:description" content="Point of Sales solution built using Lumen and Stripe. To learn how to create this and more visit http://www.jyroneparker.com">
+<meta name="twitter:image" content="https://en.gravatar.com/userimage/70717632/53adbdecac04d4ffbe3449993c901a73.jpg?size=200">
 
     <title>Parker POS - A Jyrone Parker Product</title>
 

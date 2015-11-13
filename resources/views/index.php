@@ -61,6 +61,9 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#support">Donate</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -153,6 +156,36 @@
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
                     <p><a href="mailto:jyrone.parker@gmail.com">jyrone.parker@gmail.com</a></p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="support">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Support!</h2>
+                    <hr class="primary">
+                    <p>Your support is greatly appreciated!
+
+
+                    <form action="/charge" method="POST">
+                      <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_live_NmhXa2OXDICEX12sUCzEJcff"
+                        data-amount="500"
+                        data-name="Jyrone Parker"
+                        data-description="Donation"
+                        data-image="https://en.gravatar.com/userimage/70717632/3c04baa9325774eec23a3754350a82f0.jpg"
+                        data-locale="auto">
+                      </script>
+                    </form>
+
+
+
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>

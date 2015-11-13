@@ -13,7 +13,7 @@
 <meta name="twitter:creator" content="@mastashake08">
 <meta name="twitter:title" content="Parker POS">
 <meta name="twitter:description" content="Point of Sales solution built using Lumen and Stripe. To learn how to create this and more visit http://www.jyroneparker.com">
-<meta name="twitter:image" content="https://en.gravatar.com/userimage/70717632/53adbdecac04d4ffbe3449993c901a73.jpg?size=200">
+<meta name="twitter:image" content="https://en.gravatar.com/userimage/70717632/3c04baa9325774eec23a3754350a82f0.jpg">
 
     <title>Parker POS - A Jyrone Parker Product</title>
 

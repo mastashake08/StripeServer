@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Point of Sales solution built using Laravel and Stripe. To learn how to create this and more visit http://www.jyroneparker.com">
     <meta name="author" content="Jyrone Parker">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@mastashake08">
 <meta name="twitter:creator" content="@mastashake08">
 <meta name="twitter:title" content="Parker POS">

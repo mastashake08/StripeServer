@@ -51,7 +51,7 @@ $account = \Stripe\Account::create(
 
 }
 public function charge(Request $request){
-
+Log::info('Request: ',$request->all());
   \Stripe\Stripe::setApiKey(env('STRIPE_KEY'));
 $charge = \Stripe\Charge::create(array(
   "amount" => $request->input('amount'),

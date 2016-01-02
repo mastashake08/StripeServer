@@ -19,4 +19,4 @@ $app->post('signup','StripeController@signUp');
 
 $app->post('stripe', 'WebHookController@handleStripe');
 
-$app-> post('charge','ChargeController@charge');
+$app-> post('charge','StripeController@charge');

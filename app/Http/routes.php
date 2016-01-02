@@ -15,6 +15,8 @@ $app->get('/', function () use ($app) {
     return view('index');
 });
 
+$app->post('signup',['middleware' => 'cors', 'uses' => 'StripeController@signUp']);
+
 $app->post('stripe', 'WebHookController@handleStripe');
 
 $app-> post('charge',['middleware' => 'cors', 'uses' => 'ChargeController@charge']);

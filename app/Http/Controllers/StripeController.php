@@ -60,8 +60,7 @@ $charge = \Stripe\Charge::create(array(
   "description" => $request->input('description'),
   "application_fee" => 50,
   "destination" => $request->account_id
-    ),
-    array("stripe_account" => $request->stripe_id));
+    ));
 return $charge;
 }
 

@@ -47,7 +47,7 @@ $account = \Stripe\Account::create(
   ),
   )
  );
- return $account;
+ return $account->id;
 
 }
 public function charge(Request $request){

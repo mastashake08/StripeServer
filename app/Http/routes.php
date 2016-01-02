@@ -19,4 +19,4 @@ $app->post('signup','StripeController@signUp');
 
 $app->post('stripe', 'WebHookController@handleStripe');
 
-$app-> post('charge',['middleware' => 'cors', 'uses' => 'ChargeController@charge']);
+$app-> post('charge','ChargeController@charge');

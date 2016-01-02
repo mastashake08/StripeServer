@@ -16,7 +16,7 @@ $account = \Stripe\Account::create(
   array(
     "country" => "US",
     "managed" => true,
-    "email" => $request->email,
+/*    "email" => $request->email,
     "legal_entity" =>[
     "first_name" =>$request->firstname,
     "last_name" =>$request->lastname,
@@ -36,7 +36,7 @@ $account = \Stripe\Account::create(
         ],
         "ssn_last_4" => $request->ssn_last_4,
       ],
-
+*/
       "tos_acceptance" => [
         "date" => time(),
         "ip" => $request->ip(),

@@ -43,11 +43,11 @@ $account = \Stripe\Account::create(
         "user_agent" => $request->header('User-Agent')
         ],
     array("external_account" => $request->token,
-    
+
   ),
   )
  );
- dd($account);
+ return $account;
 
 }
 public function charge(Request $request){

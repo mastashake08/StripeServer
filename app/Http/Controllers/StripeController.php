@@ -47,7 +47,7 @@ $account = \Stripe\Account::create(
   ),
   )
  );
- return json([
+ return response()->json([
    'id' =>$account->id,
    'secret' =>$account->keys['secret']
  ]);

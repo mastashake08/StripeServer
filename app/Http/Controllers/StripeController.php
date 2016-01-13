@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class StripeController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('cors');
+  }
 
 public function signUp(Request $request){
   Log::info('Request: ', $request->all());
@@ -61,7 +65,7 @@ $charge = \Stripe\Charge::create(array(
   "currency" => "usd",
   "source" => $request->token,
   "description" => $request->input('description'),
-  "application_fee" => 50,
+  "application_fee" => $request->input('amount') * 0.02,
   "destination" => $request->account_id
     ));
 return $charge;

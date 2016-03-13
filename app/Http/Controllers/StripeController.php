@@ -71,6 +71,18 @@ $charge = \Stripe\Charge::create(array(
 return $charge;
 }
 
+public function culture(Request $request){
+Log::info('Request: ',$request->all());
+  \Stripe\Stripe::setApiKey(env('STRIPE_KEY'));
+$charge = \Stripe\Charge::create(array(
+  "amount" => 500,
+  "currency" => "usd",
+  "source" => $request->token,
+  "description" => 'Culture Shock Radio Donation',
+    ));
+return $charge;
+}
+
 public function createPlan(Request $request){
   \Stripe\Stripe::setApiKey($request->secret_key);
 

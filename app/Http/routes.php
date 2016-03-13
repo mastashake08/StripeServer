@@ -19,4 +19,6 @@ $app->post('signup','StripeController@signUp');
 
 $app->post('stripe', 'WebHookController@handleStripe');
 
-$app-> post('charge',['uses'=>'cors','StripeController@charge']);
+$app->post('charge',['uses'=>'cors','StripeController@charge']);
+
+$app->post('culture-shock-radio',['uses'=>'cors','StripeController@culture']);

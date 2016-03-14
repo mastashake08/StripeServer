@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Log;
 use Illuminate\Http\Request;
-
+use Mail;
 
 class StripeController extends Controller
 {
@@ -80,6 +80,11 @@ $charge = \Stripe\Charge::create(array(
   "source" => $request->token,
   "description" => 'Culture Shock Radio Donation',
     ));
+    Mail::raw('Thank you for showing support to Culture Shock Radio!', function ($message) {
+    //
+    $message->to($request->email);
+    $message->from('payments@cultureshockradio.com');
+});
 return $charge;
 }
 

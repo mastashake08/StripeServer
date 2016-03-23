@@ -40,8 +40,8 @@ public function handleGithub(Request $request){
 
    }
    public function handleBitbucket(Request $request){
-     var_dump($request->repository); exit();
-       Mail::raw("There is a new push to the project {$request->push->repository['name']}"  ,
+     //var_dump(); exit();
+       Mail::raw("There is a new push to the project {$request->repository['name']}"  ,
        function($msg) {
          $msg->to('8594024863@messaging.sprintpcs.com');
 

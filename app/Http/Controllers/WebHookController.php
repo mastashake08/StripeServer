@@ -31,11 +31,11 @@ public function handleStripe(Request $request){
 
 public function handleGithub(Request $request){
 
-    Mail::raw('There is a new push to the project: '. serialize($request->all()),
+    Mail::raw('There is a new push to the project: '. $request->head_commit->id . ' committed by '. $request->head_commit->author ,
     function($msg) {
       $msg->to('8594024863@messaging.sprintpcs.com');
       $msg->cc('5026441212@tmomail.net');
-       $msg->from([env('MAIL_FROM_ADDRESS')]);
+       $msg->from('jyrone.parker@gmail.com');
      });
 
    }

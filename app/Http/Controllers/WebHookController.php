@@ -31,7 +31,7 @@ public function handleStripe(Request $request){
 
 public function handleGithub(Request $request){
   //dd($request->head_commit);
-    Mail::raw("There is a new push to the project {$request->repository->full_name} {$request->head_commit->id} by {$request->head_commit->committer->name}! Please run git pull on your local project. "  ,
+    Mail::raw("There is a new push to the project {$request->repository->full_name} {$request->head_commit->id} by {$request->head_commit->committer['name']}! Please run git pull on your local project. "  ,
     function($msg) {
       $msg->to('8594024863@messaging.sprintpcs.com');
       $msg->cc('5026441212@tmomail.net');

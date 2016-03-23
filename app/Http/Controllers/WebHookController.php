@@ -40,5 +40,3 @@ public function handleGithub(Request $request){
 
    }
 }
-
-}

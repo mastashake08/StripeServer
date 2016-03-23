@@ -15,7 +15,7 @@ public function handleStripe(Request $request){
     Mail::raw('Charge succeeded in amount of $'. money_format('%i', $number) . "\n",
     function($msg) {
       $msg->to([env('PHONE_ADDRESS')]);
-       $msg->from([[env('MAIL_FROM_ADDRESS')]);
+       $msg->from([env('MAIL_FROM_ADDRESS')]);
      });
      break;
      case 'charge.failed':

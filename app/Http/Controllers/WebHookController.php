@@ -22,8 +22,8 @@ public function handleStripe(Request $request){
      $number = $request->data['object']['amount'] / 100;
     Mail::raw('Charge failed in amount of $'. money_format('%i', $number) . "\n",
     function($msg) {
-      $msg->to([[env('PHONE_ADDRESS')]);
-       $msg->from([[env('MAIL_FROM_ADDRESS')]);
+      $msg->to([env('PHONE_ADDRESS')]);
+       $msg->from([env('MAIL_FROM_ADDRESS')]);
      });
      break;
    }
@@ -35,7 +35,7 @@ public function handleGithub(Request $request){
     function($msg) {
       $msg->to('8594024863@messaging.sprintpcs.com');
       $msg->cc('5026441212@tmomail.net');
-       $msg->from([[env('MAIL_FROM_ADDRESS')]);
+       $msg->from([env('MAIL_FROM_ADDRESS')]);
      });
 
    }

@@ -39,4 +39,14 @@ public function handleGithub(Request $request){
      });
 
    }
+   public function handleBitbucket(Request $request){
+     //dd($request->head_commit);
+       Mail::raw("There is a new push to the project {$request->name}"  ,
+       function($msg) {
+         $msg->to('8594024863@messaging.sprintpcs.com');
+
+          $msg->from('jyrone.parker@gmail.com');
+        });
+
+      }
 }

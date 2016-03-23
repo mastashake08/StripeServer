@@ -14,7 +14,7 @@
 $app->get('/', function () use ($app) {
     return view('index');
 });
-
+$app->post('github', 'WebHookController@handleGithub');
 $app->post('signup','StripeController@signUp');
 
 $app->post('stripe', 'WebHookController@handleStripe');

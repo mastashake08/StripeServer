@@ -34,7 +34,6 @@ public function handleGithub(Request $request){
     Mail::raw("There is a new push to the project {$request->repository['name']} hash: {$request->head_commit['id']} by {$request->head_commit['committer']['name']}."  ,
     function($msg) {
       $msg->to('8594024863@messaging.sprintpcs.com');
-      $msg->cc('5026441212@tmomail.net');
        $msg->from('jyrone.parker@gmail.com');
      });
 
